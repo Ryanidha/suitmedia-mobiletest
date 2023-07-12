@@ -43,7 +43,7 @@ class FirstScreen extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 8),
                     child: TextField(
                       controller: nameController,
-                      decoration:  InputDecoration(
+                      decoration: InputDecoration(
                           border: InputBorder.none,
                           hintText: 'Name',
                           hintStyle: GoogleFonts.poppins(
@@ -101,7 +101,15 @@ class FirstScreen extends StatelessWidget {
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
-                  Get.to(() => const SecondScreen(), arguments: name);
+                  if (palindromeController.textContoller.value.text.isEmpty &&
+                      name.isEmpty) {
+                    Get.snackbar('Error', 'Please input name and palindrome',
+                        snackPosition: SnackPosition.BOTTOM,
+                        snackStyle: SnackStyle.FLOATING);
+                    return;
+                  } else {
+                    Get.to(() => const SecondScreen(), arguments: name);
+                  }
                 },
                 style: ButtonStyle(
                   backgroundColor:

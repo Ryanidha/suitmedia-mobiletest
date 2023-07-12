@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+// ignore: must_be_immutable
 class UserList extends StatelessWidget {
    String? firstName;
     String? lastName;
@@ -11,6 +12,7 @@ class UserList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final sw = MediaQuery.of(context).size.width;
     return Container(
       decoration: const BoxDecoration(
         border: Border(
@@ -20,14 +22,14 @@ class UserList extends StatelessWidget {
           ),
         ),
       ),
-      width: MediaQuery.of(context).size.width,
+      width: sw,
       height: 80,
       child: Padding(
         padding: const EdgeInsets.only(top: 16.0, bottom: 16.0, left: 18),
         child: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
           Container(
-            width: 49.0,
-            height: 49.0,
+            width: 50.0,
+            height: 50.0,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               image: DecorationImage(
