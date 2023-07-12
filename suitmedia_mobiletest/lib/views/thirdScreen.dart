@@ -47,15 +47,13 @@ class ThirdScreen extends StatelessWidget {
                         user.last_name,
                         user.email,
                         user.avatar
-                        ]);
+                      ]);
                     },
                     child: UserList(
                         firstName: user.first_name,
                         lastName: user.last_name,
                         email: user.email,
-                        avatar: user.avatar
-                    ),
-
+                        avatar: user.avatar),
                   );
                 });
           }),

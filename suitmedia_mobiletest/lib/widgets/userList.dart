@@ -3,12 +3,12 @@ import 'package:google_fonts/google_fonts.dart';
 
 // ignore: must_be_immutable
 class UserList extends StatelessWidget {
-   String? firstName;
-    String? lastName;
-    String? email;
-    String? avatar;
-   
-   UserList({super.key, this.firstName, this.lastName, this.email, this.avatar});
+  String? firstName;
+  String? lastName;
+  String? email;
+  String? avatar;
+
+  UserList({super.key, this.firstName, this.lastName, this.email, this.avatar});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class UserList extends StatelessWidget {
       width: sw,
       height: 80,
       child: Padding(
-        padding: const EdgeInsets.only(top: 16.0, bottom: 16.0, left: 18),
+        padding: const EdgeInsets.only(top: 16.0, bottom: 16.0, left: 20),
         child: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
           Container(
             width: 50.0,
@@ -33,8 +33,8 @@ class UserList extends StatelessWidget {
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               image: DecorationImage(
-                fit: BoxFit.fill,
                 image: NetworkImage(avatar.toString()),
+                fit: BoxFit.fill,
               ),
             ),
           ),
@@ -47,16 +47,16 @@ class UserList extends StatelessWidget {
               Text(
                 '$firstName $lastName',
                 style: GoogleFonts.poppins(
-                    fontSize: 16,
+                    fontSize: 18,
                     fontWeight: FontWeight.w600,
-                    color: const Color(0xff04021D)),
+                    color: Colors.black),
               ),
               Text(
                 email.toString(),
                 style: GoogleFonts.poppins(
-                    fontSize: 10,
+                    fontSize: 12,
                     fontWeight: FontWeight.w500,
-                    color: const Color(0xff686777)),
+                    color: Colors.black),
               ),
             ],
           )

@@ -5,12 +5,12 @@ import 'package:suitmedia_mobiletest/models/userModel.dart';
 import '../models/repository.dart';
 
 class PaginationController extends GetxController {
-  final Repository _userRepository;
+  final Repository _userRepo;
   final _users = <UserModel>[].obs;
   final _paginationFilter = PaginationFilter().obs;
   final _lastPage = false.obs;
 
-  PaginationController(this._userRepository);
+  PaginationController(this._userRepo);
 
   List<UserModel> get users => _users.toList();
   int? get limit => _paginationFilter.value.limit;
@@ -25,7 +25,7 @@ class PaginationController extends GetxController {
   }
 
   Future<void> _getAllUsers() async {
-    final usersData = await _userRepository.getUser(_paginationFilter.value);
+    final usersData = await _userRepo.getUser(_paginationFilter.value);
     if (usersData.isEmpty) {
       _lastPage.value = true;
     }
